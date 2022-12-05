@@ -17,7 +17,10 @@
                     <div class="card-header">
                         <h5>Upload Image</h5>
                     </div>
-                    <img src="{{asset('/storage/image/cfVnGRWjW7miWyvau53HRp81fv3akw5l5gxfeRDf.jpg')}}" alt="">
+                    @foreach ($list as $value)
+
+                    <img src="{{asset('/storage/'.$value->path)}}" alt="">
+                    @endforeach
                     <div class="crd-body">
                         <form action="{{route('saveImg')}}" method="POST" enctype="multipart/form-data">
                             @csrf
